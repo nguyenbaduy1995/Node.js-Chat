@@ -12,7 +12,7 @@ html
 			div.navbar.navbar-fixed-top
 				div.navbar-inner
 					div.container
-						a.brand(href="#") This is a fking chat room dcms!
+						a.brand(href="#") Chat : Node.js + Socket.io
 			div#chatEntries
 			div.row#entries
 				input(type='text')#messageInput
