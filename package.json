@@ -1,13 +1,14 @@
 {
-  "name":"chat",
-  "node":"0.6.12",
-  "author":"geekuillaume",
+  "name": "chat",
+  "node": "0.6.12",
+  "author": "geekuillaume",
   "dependencies": {
-  	"socket.io": "*",
-  	"express": "*",
-  	"jade": "*"
-  	  },
+    "express": "*",
+    "formidable": "^1.1.1",
+    "jade": "*",
+    "socket.io": "*"
+  },
   "scripts": {
-  	"start": "node server.js"
+    "start": "node server.js"
   }
 }
