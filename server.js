@@ -36,7 +36,7 @@ app.get('/file/:name', (req, res) => {
   console.log(pathh)
   res.download(pathh)
 })
-app.get('/upload', function (req, res) {
+app.post('/upload', function (req, res) {
   console.log('im heree')
   // create an incoming form object
   var form = new formidable.IncomingForm()
