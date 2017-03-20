@@ -1,7 +1,7 @@
 //	Customization
 var path = require('path')
 var formidable = require('formidable')
-var appPort = 16558
+var appPort = process.env.PORT || 16558
 var fs = require('fs')
 // Librairies
 
