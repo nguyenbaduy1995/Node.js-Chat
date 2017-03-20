@@ -24,7 +24,7 @@ $('#upload-input').on('change', function () {
       // add the files to formData object for the data payload
       formData.append('uploads[]', file, file.name)
     }
-
+    console.log('Before ajax')
     $.ajax({
       url: '/upload',
       type: 'POST',
