@@ -4,7 +4,6 @@
     $('.progress-bar').width('0%');
 });
 */
-var socket = io.connect()
 var pseudo = ""
 socket.on('file', function(data) {
   addFile(data['message'], data['pseudo'], new Date().toISOString(), false);
@@ -60,6 +59,7 @@ $('#upload-input').on('change', function () {
         return xhr
       }
     })
+    console.log(file)
     sentFile(file)
   }
 })
@@ -67,14 +67,14 @@ $('#upload-input').on('change', function () {
 function addFile (msg, pseudo, date, self) {
   if (self) var classDiv = 'row message self'
   else var classDiv = 'row message'
-  $('#chatEntries').append('<div class="' + classDiv + '"><p class="infos"><span class="pseudo">' + pseudo + '</span>, <time class="date" title="' + date + '">' + date + '</time></p><p><a herf="http://google.com.vn"' + msg + '</a</p></div>')
+  $('#chatEntries').append('<div class="' + classDiv + '"><p class="infos"><span class="pseudo">' + pseudo + '</span>, <time class="date" title="' + date + '">' + date + `</time></p><a href="/file/${msg}"><p>` + msg + '</p></a></div>')
   time()
 }
 function sentFile (file) {
   if (pseudo == '') {
     $('#modalPseudo').modal('show')
   } else 		{
-    socket.emit('message', file.name)
+    socket.emit('file', file.name)
     addFile(file.name, 'Me', new Date().toISOString(), true)
   }
 }

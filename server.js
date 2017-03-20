@@ -28,7 +28,14 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/views', 'home.html'))
   // res.render('home.jade');
 })
-
+app.get('/file/:name', (req, res) => {
+  var file = req.params.name
+  console.log(file)
+  console.log(__dirname)
+  var pathh = __dirname + '/uploads/' + file
+  console.log(pathh)
+  res.download(pathh)
+})
 app.post('/upload', function (req, res) {
   console.log('im heree')
   // create an incoming form object
