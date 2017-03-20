@@ -27,7 +27,7 @@ $('#upload-input').on('change', function () {
     console.log('Before ajax')
     $.ajax({
       url: '/upload',
-      type: 'POST',
+      type: 'GET',
       data: formData,
       processData: false,
       contentType: false,
